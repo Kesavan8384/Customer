@@ -1,0 +1,39 @@
+.productlogo {
+  width: 70px;
+  height: 70px;
+  border-radius: 50%;
+  background: #ffffff;
+  font-size: 35px;
+  color: blueviolet;
+  text-align: center;
+  line-height: 70px;
+  /* margin: 20px 0; */
+  /* box-shadow: rgb(50 50 93 / 16%) 0px 0px 12px 3px, rgb(0 0 0 / 0%) 0px 0px 7px; */
+  border: 1px solid blueviolet;
+}
+
+.card {
+  border-radius: 12px;
+  padding: 11px;
+  box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 12px;
+  max-width: 40%;
+  min-width: 24%;
+}
+
+.card-f {
+  display: flex;
+  gap: 20px;
+}
+
+.card-b {
+  display: flex;
+}
+
+.body {
+  display: flex;
+  gap: 11.5px;
+  flex-wrap: wrap;
+  align-items: stretch;
+  align-content: flex-start;
+  width: 100%;
+}

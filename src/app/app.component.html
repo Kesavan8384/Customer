@@ -1,0 +1,37 @@
+<div class="header">
+  <div>
+    <h1>Customer Type</h1>
+  </div>
+
+
+  <div class="search-field">
+    <mat-form-field class="example-full-width">
+      <input matInput type="text" [(ngModel)]="value" placeholder="Search Customer">
+      <button *ngIf="value" matSuffix mat-icon-button aria-label="Clear" (click)="value=''">
+        <mat-icon>close</mat-icon>
+      </button>
+      <!-- <input matInput type="search"  value="" placeholder="Search Customer"> -->
+    </mat-form-field>
+  </div>
+
+  <div>
+    <button mat-raised-button color="primary" (click)="popup('Add',null)">Add Customer
+    </button>
+  </div>
+
+</div>
+
+<div class="body">
+
+  <div class="sidenav">
+    <mat-radio-group [(ngModel)]="selectedType" class="mb-3" aria-label="Select customer type">
+      <mat-radio-button value="All" class="me-3">All</mat-radio-button>
+      <mat-radio-button value="Premium" class="me-3">Premium</mat-radio-button>
+      <mat-radio-button value="Standard">Standard</mat-radio-button>
+    </mat-radio-group>
+  </div>
+  <div class="content">
+    <app-customerlist [data]="customerform" [filter]="selectedType" [filterautocomplete]="value"></app-customerlist>
+
+  </div>
+</div>

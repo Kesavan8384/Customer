@@ -1,0 +1,48 @@
+<div class="body">
+
+    <div *ngFor="let Item of Customer|filter:filterautocomplete" class="card">
+        <div>
+
+            <div class="card-f">
+                <div>
+                    <div class="productlogo" theme>
+                        <!-- profilelogo -->
+                        {{ Item.First_Name.slice(0, 1) | uppercase }} {{ Item.Last_Name.slice(0, 1) | uppercase }}
+                    </div>
+                </div>
+
+                <div>
+                    <h3>{{Item.First_Name +' '+ Item.Last_Name}}</h3>
+                    <p>{{Item.Email}}</p>
+                    <p>{{Item.Phone}}</p>
+                </div>
+            </div>
+
+
+
+
+        </div>
+        <div class="card-f">
+            <div>
+                <button mat-button (click)="popup('View',Item)">View</button>
+
+            </div>
+            <div>
+                <button mat-button (click)="popup('Edit',Item)">Edit</button>
+
+            </div>
+            <div>
+                <button mat-button (click)="popup('Delete',Item)">Delete</button>
+
+            </div>
+
+
+        </div>
+    </div>
+
+
+
+
+
+
+</div>

@@ -1,0 +1,37 @@
+.header {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  padding: 10px;
+}
+
+.search-field {
+  width: 50%;
+}
+
+.example-full-width {
+  width: 100%;
+}
+
+.form-container {
+  display: flex;
+  flex-direction: column;
+  padding: 40px;
+}
+
+.popup-head {
+  display: flex;
+  justify-content: space-between;
+}
+
+.body {
+  display: flex;
+  gap: 30px;
+}
+
+.sidenav {
+  width: 10%;
+}
+.content {
+  width: 90%;
+}

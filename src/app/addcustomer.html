@@ -1,0 +1,74 @@
+<div [formGroup]="CustomerForm" class="form-container">
+    <div class="popup-head">
+        <h1>{{method}} Customer</h1>
+        <mat-icon style="cursor: pointer;" mat-dialog-close>close</mat-icon>
+    </div>
+
+
+
+    <mat-form-field appearance="outline" class="full-width">
+        <mat-label>Title</mat-label>
+        <mat-select formControlName="Title">
+            <mat-option value="" disabled>Select Title</mat-option>
+            <mat-option value="Mr">Mr</mat-option>
+            <mat-option value="Ms">Ms</mat-option>
+            <mat-option value="Dr">Dr</mat-option>
+        </mat-select>
+        <mat-error *ngIf="CustomerForm.get('Title')?.touched && CustomerForm.get('Title')?.invalid">
+            Title is required
+        </mat-error>
+    </mat-form-field>
+
+
+    <mat-form-field appearance="outline" class="full-width">
+        <mat-label>First Name</mat-label>
+        <input matInput formControlName="First_Name">
+        <mat-error *ngIf="CustomerForm.get('First_Name')?.touched && CustomerForm.get('First_Name')?.invalid">
+            First name is required
+        </mat-error>
+    </mat-form-field>
+
+
+    <mat-form-field appearance="outline" class="full-width">
+        <mat-label>Last Name</mat-label>
+        <input matInput formControlName="Last_Name">
+        <mat-error *ngIf="CustomerForm.get('Last_Name')?.touched && CustomerForm.get('Last_Name')?.invalid">
+            Last name is required
+        </mat-error>
+    </mat-form-field>
+
+
+    <mat-form-field appearance="outline" class="full-width">
+        <mat-label>Email</mat-label>
+        <input matInput formControlName="Email" type="email">
+        <mat-error *ngIf="CustomerForm.get('Email')?.touched && CustomerForm.get('Email')?.invalid">
+            Enter a valid email
+        </mat-error>
+    </mat-form-field>
+
+
+    <mat-form-field appearance="outline" class="full-width">
+        <mat-label>Phone</mat-label>
+        <input matInput formControlName="Phone" type="text">
+        <mat-error *ngIf="CustomerForm.get('Phone')?.touched && CustomerForm.get('Phone')?.invalid">
+            Enter a valid phone number
+        </mat-error>
+    </mat-form-field>
+
+
+    <mat-form-field appearance="outline" class="full-width">
+        <mat-label>Customer Type</mat-label>
+        <mat-select formControlName="Customer_Type">
+            <mat-option value="" disabled>Select Type</mat-option>
+            <mat-option value="Premium">Premium</mat-option>
+            <mat-option value="Standard">Standard</mat-option>
+        </mat-select>
+        <mat-error *ngIf="CustomerForm.get('Customer_Type')?.touched && CustomerForm.get('Customer_Type')?.invalid">
+            Customer type is required
+        </mat-error>
+    </mat-form-field>
+
+
+    <button mat-raised-button (click)="submit(this.method)" color="primary" type="submit"
+        [disabled]="CustomerForm.invalid||method=='View'">{{method}}</button>
+</div>
